@@ -1,0 +1,158 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+}
+.ledger-player {
+  display: flex;
+  margin: 40px 20px;
+}
+li {
+  text-align: start;
+}
+
+.m-l-20 {
+  margin-left: 20px;
+}
+
+.error {
+  color: red;
+}
+.each-box {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.icons-in-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 48px;
+  z-index: 1000;
+}
+.P1_shape {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 1000;
+  position: relative;
+  border: 5px solid black;
+}
+.P2_shape {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  z-index: 1000;
+  border: 5px solid black;
+}
+.P3_shape {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: yellow;
+  z-index: 1000;
+  border: 5px solid black;
+}
+.P4_shape {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: green;
+  z-index: 1000;
+  border: 5px solid black;
+}
+.layout {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.board {
+  margin-left: 40px;
+  position: relative;
+  border-radius: 5px;
+  max-width: 600px;
+  min-height: 600px;
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  transform: scale(1, -1);
+  z-index: 10;
+  /* animation-name: flipBoard;
+  animation-duration: 100s;
+  animation-delay: 2s; */
+}
+
+@keyframes flipBoard {
+  0% {
+    transform: scale(1);
+  }
+  3% {
+    transform: scale(1, -1);
+  }
+  100% {
+    transform: scale(1, -1);
+  }
+}
+
+.box-row {
+  display: flex;
+}
+.box-row:nth-child(2n) {
+  flex-direction: row-reverse;
+  /* animation-name: reverseRows;
+  animation-duration: 100s;
+  animation-delay: 2s; */
+}
+
+@keyframes reverseRows {
+  0% {
+    flex-direction: row-reverse;
+  }
+  3% {
+    flex-direction: row-reverse;
+  }
+  100% {
+    flex-direction: row-reverse;
+  }
+}
+
+.box {
+  width: 59px;
+  height: 59px;
+  text-align: left;
+  vertical-align: text-top;
+  transition: 0.2s ease-in;
+  position: relative;
+  display: flex;
+  transform: scale(1, -1);
+  /* animation-name: loadingBox;
+  animation-duration: 100s;
+  animation-delay: 2s; */
+}
+
+@keyframes loadingBox {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1, -1);
+  }
+
+  100% {
+    transform: scale(1, -1);
+  }
+}
+
+.box span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.3s ease-in;
+}
+
+.box:nth-child(2n) {
+}
+
+.face .dice .four .six {
+  background-color: red;
+}
