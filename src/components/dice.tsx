@@ -2,7 +2,8 @@ import React from "react";
 import ReactDice from "react-dice-complete";
 import diceSound from "../assets/diceroll.mp3";
 
-class Dice extends React.Component {
+class Dice extends React.Component<{ rollDice: Function }> {
+  reactDice = {} as any;
   rollAll = () => {
     new Audio(diceSound).play();
     this.reactDice.rollAll();

@@ -9,15 +9,22 @@ import {
   ladderPositions,
 } from "./assets/SnakeAndLadderPositions";
 
-class App extends React.Component {
+class App extends React.Component<
+  {},
+  {
+    numOfPlayers: number;
+    hidePlayerSelection: boolean;
+    invalidNumOfPlayers?: boolean;
+    chanceToRollDice?: string;
+    showLayout?: boolean;
+    diceValue?: number;
+  }
+> {
   constructor(props: any) {
     super(props);
     this.state = {
       numOfPlayers: 2,
       hidePlayerSelection: false,
-    } as {
-      numOfPlayers: number;
-      hidePlayerSelection: boolean;
     };
   }
   updateNumberOfPlayers = (e: { target: { value: number } }) => {
@@ -60,6 +67,7 @@ class App extends React.Component {
       if (obj.currentPosition === currentPlayerPostion) {
         new Audio(require("./assets/snake.mp3")).play();
         this.setState({
+          ...this.state,
           [currentChance]: {
             currentPosition: obj.gotoPosition,
           },
@@ -70,6 +78,7 @@ class App extends React.Component {
       if (obj.currentPosition === currentPlayerPostion) {
         new Audio(require("./assets/ladder.mp3")).play();
         this.setState({
+          ...this.state,
           [currentChance]: {
             currentPosition: obj.gotoPosition,
           },
@@ -100,6 +109,7 @@ class App extends React.Component {
 
     while (diceVal <= this.state.diceValue) {
       this.setState({
+        ...this.state,
         [currentChance]: {
           currentPosition: currentPlayerPostion + diceVal,
         },

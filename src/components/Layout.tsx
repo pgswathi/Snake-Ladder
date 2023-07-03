@@ -1,7 +1,6 @@
 import React from "react";
 import * as R from "ramda";
 import { EachBox } from "./EachBox";
-import boardimg from "../assets/snakeladderboard.jpg";
 
 export const Layout = (props) => {
   // const { numOfPlayers } = props;
@@ -34,13 +33,13 @@ export const Layout = (props) => {
     <>
       <div className="board">{renderBoxes(props)}</div>
       <img
-        src={boardimg}
+        src={require("../assets/snakeladderboard.jpg")}
         alt="board"
         style={{
           position: "absolute",
           top: "0.1rem",
           width: "38rem",
-          left: "19rem"
+          left: "19rem",
         }}
       />
     </>
