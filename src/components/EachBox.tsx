@@ -1,5 +1,8 @@
 import React from "react";
-import { snakePositions, ladderPositions } from "./SnakeAndLadderPositions";
+import {
+  snakePositions,
+  ladderPositions,
+} from "../assets/SnakeAndLadderPositions";
 
 export const EachBox = (props) => {
   const { boxIndex, updatedState } = props;
